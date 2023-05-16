@@ -1,0 +1,8 @@
+.Product {
+    display: flex;
+    width: 500px;
+    height: 100px;
+    background-color: blue;
+    gap:10px;
+
+}
