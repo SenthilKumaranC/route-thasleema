@@ -15,6 +15,7 @@ const Header = () => {
     },[navigate])
 
     return <div className="Header">
+        Thasleema
         <button onClick={gotoProducts}>Products</button>
         <button onClick={gotoContactUs}>Contact Us</button>
     </div>
