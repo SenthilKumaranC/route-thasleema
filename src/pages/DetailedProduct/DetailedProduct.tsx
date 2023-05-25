@@ -1,14 +1,19 @@
-import { useContext, useMemo } from "react";
+import { useCallback, useContext, useMemo } from "react";
 import { AppContext } from "../../App";
-import { useParams, useSearchParams } from "react-router-dom";
+import classes from "./DetailedProduct.module.css";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 const DetailedProduct = () => {
   const { state } = useContext(AppContext);
   const { products } = state;
 
   const params = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
 
-  const [searchParams,setSearchParams] = useSearchParams();
+  const gotoProducts = useCallback(() => {
+    navigate("/products")
+  }, [navigate])
 
   const product = useMemo(() => {
     if (params.productId !== undefined) {
@@ -22,11 +27,25 @@ const DetailedProduct = () => {
 
   console.log(product);
 
-  return <>{product ? <div> 
-    <h1>{product.name}</h1>
-    {searchParams.get("price")}
-    
-  </div> : "Product not available"}</>;
+  return <>
+    <a onClick={gotoProducts} className={classes.BacktoProducts}>-Back to Products</a>
+    {product ? <div className={classes.DetailedProduct}>
+      <h2>{product.name}</h2>
+      <h1>About this item:</h1>
+      <ul>
+        <li>Brand : {product.brand}</li>
+        <li>Description : {product.description}</li>
+        <li>Specification :</li>
+        <ul>
+          <li> Battery Level : {product.specification.batteryLevel} </li>
+          <li> Camera Pixel : {product.specification.cameraPixel} </li>
+          <li> Processor Type : {product.specification.processorType} </li>
+        </ul>
+        <li> Price : {searchParams.get("price")}</li>
+      </ul>
+    </div> : "Product not available"}</>;
 };
+
+
 
 export default DetailedProduct;

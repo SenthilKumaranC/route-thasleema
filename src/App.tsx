@@ -25,8 +25,8 @@ export interface IAppState {
 const initialState: IAppState = {
   products: [
     { id: 0, name: "IPhone13", brand: "Apple", description: "2021 Model", specification:{batteryLevel:"500mAh", cameraPixel:"12MP",processorType:"Intel"}},
-    { id: 1, name: "Samsung21", brand: "Samsung", description: "2023 Model", specification:{batteryLevel:"400mAh", cameraPixel:"12MP",processorType:""}},
-    { id: 2, name: "OppoA47", brand: "Oppo", description: "2015 Model", specification:{batteryLevel:"200mAh", cameraPixel:"12MP",processorType:""}},
+    { id: 1, name: "Samsung21", brand: "Samsung", description: "2023 Model", specification:{batteryLevel:"400mAh", cameraPixel:"15MP",processorType:"Ryzen"}},
+    { id: 2, name: "OppoA47", brand: "Oppo", description: "2015 Model", specification:{batteryLevel:"200mAh", cameraPixel:"6MP",processorType:"AMD"}},
   ],
 };
 

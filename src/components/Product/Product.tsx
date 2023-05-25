@@ -15,7 +15,6 @@ const Product = (props:IProduct) => {
     return <div onClick={navigateToDetails} role="button" className="Product">
         <img src={`https://picsum.photos/200/300?random=${id}`} alt="mobile"/>
         {name}
-
     </div>
 }
 

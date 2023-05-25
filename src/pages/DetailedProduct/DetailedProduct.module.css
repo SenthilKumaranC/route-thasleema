@@ -1,0 +1,14 @@
+.DetailedProduct {
+    width: inherit;
+    height: inherit;
+    background-color: saddlebrown;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+
+.BacktoProducts {
+    text-align: left;
+    font-size: 11px;
+    cursor: pointer;
+}

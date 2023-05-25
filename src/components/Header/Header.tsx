@@ -14,10 +14,14 @@ const Header = () => {
         navigate("contactus")
     },[navigate])
 
+    const gotoAddProduct = useCallback(()=>{
+        navigate("addproduct?aa=3")
+    },[navigate])
+
     return <div className="Header">
-        Thasleema
         <button onClick={gotoProducts}>Products</button>
         <button onClick={gotoContactUs}>Contact Us</button>
+        <button onClick={gotoAddProduct}>Add Product</button>
     </div>
 }
 
